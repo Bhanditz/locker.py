@@ -10,9 +10,9 @@ class Locker(type):
 			self.__class__.__bases__[0].__init__(self, *args, **kwargs)
 			try:
 				self.__class__.__bases__[0].__getitem__(self, req)
-			except IndexError:
-				raise ValueError('Provided index must exit. This instance cannot'
-								 'be unlocked.')
+			except LookupError as e:
+				raise e.__class__('Provided index must exist. This instance'
+								 ' cannot be unlocked.')
 			if hasattr(req, '__iter__'):
 				self._req = set(req)
 			else:
