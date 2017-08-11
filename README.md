@@ -1,6 +1,8 @@
 # locker.py
 Metaclass that makes container classes behave as if they are empty until they are unlocked.
 
+This project is new and under development. Features may not work exactly as documented and may change dramatically at any time.
+
 # Logic
 ### ```Locker``` metaclass
 The ```Locker``` metaclass takes every method from an inherited class other than a select few (such as ```__init__```) and applies the ```locker()``` decorator. It does _not_ alter any of the methods of the actual class being defined, only the methods inherited from its base classes.
