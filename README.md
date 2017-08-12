@@ -17,13 +17,13 @@ of an identically named method in the base class.
 When there is no method in the base class with the name of the decorated
 function, this decorator has no effect.
 
-_locked:
-    - True: Depends on "custom" parameter:
-        - True: Execute body of decorated function.
-        - False: Execute base class's version of this method against an
+- ```_locked```:
+    - ```True```: Depends on ```custom``` parameter:
+        - ```True```: Execute body of decorated function.
+        - ```False```: Execute base class's version of this method against an
                empty instance of the base class, return the result. There
                are no side effects.
-    - False: Execute base class's version of this method against this
+    - ```False```: Execute base class's version of this method against this
            instance, with any associated side effects to this instance.
 
 
